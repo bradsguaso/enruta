@@ -1,0 +1,10 @@
+# Entorno virtual
+myenv/
+
+# Archivos de configuración local
+*.env
+*.pyc
+
+# Archivos de Django
+__pycache__/
+*.pyc
