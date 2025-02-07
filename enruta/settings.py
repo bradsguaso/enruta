@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-1iy4nzu7^-348hn57i6$_@r_&d)(k#okkh8=)cxu#0hjgnc7@p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bradsguaso.pythonanywhere.com']
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+ALLOWED_HOSTS = ['127.0.0.1','bradsguaso.pythonanywhere.com']
 
 # Application definition
 
@@ -120,6 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Ruta absoluta al directorio donde se recopilan los archivos estáticos (collectstatic)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Directorios adicionales donde Django busca archivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Ejemplo: carpeta "static" en la raíz del proyecto
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
