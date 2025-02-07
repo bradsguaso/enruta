@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Ruta absoluta al directorio donde se recopilan los archivos estáticos (collectstatic)
+# Ruta absoluta al directorio donde se recopilan los archivos estáticos (collectstatic) - NUEVO
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Directorios adicionales donde Django busca archivos estáticos
