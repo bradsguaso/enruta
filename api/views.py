@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.pagination import PageNumberPagination
 from .models import Tarea
 from .models import Business
 from .models import Charge
@@ -12,6 +13,7 @@ from .serializers import ChargeSerializer
 from .serializers import RequestSerializer
 from .serializers import TransportWorkerSerializer
 from .serializers import UserSerializer
+
 
 # Create your views here.
 
@@ -42,6 +44,7 @@ class ChargeRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 class RequestListCreate(generics.ListCreateAPIView):
     queryset = Request.objects.all()
     serializer_class = RequestSerializer
+    pagination_class = pagination_class = PageNumberPagination
 
 class RequestRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Request.objects.all()
