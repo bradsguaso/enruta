@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
 from .models import Tarea
 from .models import Business
 from .models import Charge
@@ -65,4 +68,12 @@ class UserListCreate(generics.ListCreateAPIView):
 class UserRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class UserProfileView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
 

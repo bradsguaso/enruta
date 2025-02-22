@@ -5,6 +5,7 @@ from .views import ChargeListCreate, ChargeRetrieveUpdateDelete
 from .views import RequestListCreate, RequestRetrieveUpdateDelete
 from .views import TransportWorkerListCreate, TransportWorkerRetrieveUpdateDelete
 from .views import UserListCreate, UserRetrieveUpdateDelete
+from .views import UserProfileView
 
 urlpatterns = [
     path('tareas/', TareaListCreate.as_view(), name='tarea-list-create'),
@@ -19,4 +20,5 @@ urlpatterns = [
     path('transportworkers/<int:pk>/', TransportWorkerRetrieveUpdateDelete.as_view(), name='transportworker-detail'),
     path('users/', UserListCreate.as_view(), name='user-list-create'),
     path('users/<int:pk>/', UserRetrieveUpdateDelete.as_view(), name='user-detail'),
+    path('profile/', UserProfileView.as_view(), name='user_profile'),
 ]
